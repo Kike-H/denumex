@@ -1,23 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:denumex/screens/Report.dart';
 
 class Button extends StatelessWidget {
   final String label;
   final int colorBackground;
   final Color colorFont;
-  final Function callback;
+  final int action;
+
   const Button({
     Key? key,
     required this.label,
     required this.colorBackground,
     required this.colorFont,
-    required this.callback,
+    required this.action,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: () {
-        callback();
+        if (action == 1) {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Report()));
+        } else if (action == 2) {
+          const AlertDialog(
+            title: Text("Corrupción reportarda"),
+          );
+        }
       },
       minWidth: double.infinity,
       height: 60,

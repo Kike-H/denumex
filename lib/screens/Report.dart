@@ -5,15 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:denumex/components/Input.dart';
 import 'package:denumex/components/Button.dart';
 
-class SingUp extends StatelessWidget {
-  final inputName = Input(label: "Nombre(s)");
-  final inputLastName = Input(label: "Apellido");
-  final inputEmail = Input(label: "Email");
-  final inputPassword = Input(label: "Contraseña", obscureText: true);
-  final inputPasswordConfirm =
-      Input(label: "Confirma tu contraseña", obscureText: true);
+class Report extends StatelessWidget {
+  final inputTitle = Input(label: "Titulo");
+  final inputPlace = Input(label: "Lugar");
 
-  SingUp({Key? key}) : super(key: key);
+  Report({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +40,7 @@ class SingUp extends StatelessWidget {
               Column(
                 children: <Widget>[
                   const Text(
-                    "Sign up",
+                    "Reportar Corrupción",
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
@@ -54,22 +50,15 @@ class SingUp extends StatelessWidget {
                     height: 20,
                   ),
                   Text(
-                    "Create an account, It's free ",
+                    "Reporta toda corrupción",
                     style: TextStyle(fontSize: 15, color: Colors.grey[700]),
                   )
                 ],
               ),
               Column(
                 children: <Widget>[
-                  inputName,
-                  inputEmail,
-                  inputPassword,
-                  inputPasswordConfirm,
-                  GestureDetector(
-                      onTap: () {
-                        showLegal(context);
-                      },
-                      child: Text("Terminos y condiciones"))
+                  inputTitle,
+                  inputPlace,
                 ],
               ),
               Container(
@@ -83,22 +72,12 @@ class SingUp extends StatelessWidget {
                       right: BorderSide(color: Colors.black),
                     )),
                 child: const Button(
-                  label: 'Sing up',
+                  label: 'Reportar',
                   colorBackground: 0xFF0095FF,
                   colorFont: Colors.white,
-                  callback: action,
+                  action: 2,
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const <Widget>[
-                  Text("Already have an account?"),
-                  Text(
-                    " Login",
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
-                  )
-                ],
-              )
             ],
           ),
         ),
@@ -108,40 +87,3 @@ class SingUp extends StatelessWidget {
 }
 
 void action() {}
-
-void showLegal(BuildContext context) {
-  showModalBottomSheet(
-    context: context,
-    isScrollControlled: true,
-    backgroundColor: Colors.transparent,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-    builder: (context) => buildSheet(),
-  );
-}
-
-Widget buildSheet() => DraggableScrollableSheet(
-    initialChildSize: 0.7,
-    minChildSize: 0.5,
-    maxChildSize: 1,
-    builder: (_, controller) => Container(
-        decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
-        padding: const EdgeInsets.all(16),
-        child: ListView(
-          padding: const EdgeInsets.all(20),
-          controller: controller,
-          children: const [
-            Text(
-              "Aviso de privacidad",
-              style: TextStyle(fontSize: 44),
-            ),
-            Text(
-                "De acuerdo a lo Previsto en la “Ley Federal de Protección de Datos Personales”, declara Fervel Asesoría Integral S.C.,ser una empresa legalmente constituida de conformidad con las leyes mexicanas, con domicilio en Avenida Fuente de Trevi Número 28, Colonia Lomas de Tecamachalco, C.P. 53950, Naucalpan de Juárez en México, Estado de México.; y como responsable del tratamiento de sus datos personales, hace de su conocimiento que la información de nuestros clientes es tratada de forma estrictamente confidencial por lo que al proporcionar sus datos personales, tales como:"),
-            Button(
-                label: "Aceptar",
-                colorBackground: 0xFF0095FF,
-                colorFont: Colors.white,
-                callback: action)
-          ],
-        )));

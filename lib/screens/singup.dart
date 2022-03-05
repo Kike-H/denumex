@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:denumex/components/Input.dart';
 import 'package:denumex/components/Button.dart';
+import 'package:denumex/screens/Report.dart';
 
 class SingUp extends StatelessWidget {
   final inputName = Input(label: "Nombre(s)");
@@ -86,7 +87,7 @@ class SingUp extends StatelessWidget {
                   label: 'Sing up',
                   colorBackground: 0xFF0095FF,
                   colorFont: Colors.white,
-                  callback: action,
+                  action: 1,
                 ),
               ),
               Row(
@@ -108,6 +109,10 @@ class SingUp extends StatelessWidget {
 }
 
 void action() {}
+
+void move(BuildContext context) {
+  Navigator.push(context, MaterialPageRoute(builder: (context) => Report()));
+}
 
 void showLegal(BuildContext context) {
   showModalBottomSheet(
@@ -139,9 +144,10 @@ Widget buildSheet() => DraggableScrollableSheet(
             Text(
                 "De acuerdo a lo Previsto en la “Ley Federal de Protección de Datos Personales”, declara Fervel Asesoría Integral S.C.,ser una empresa legalmente constituida de conformidad con las leyes mexicanas, con domicilio en Avenida Fuente de Trevi Número 28, Colonia Lomas de Tecamachalco, C.P. 53950, Naucalpan de Juárez en México, Estado de México.; y como responsable del tratamiento de sus datos personales, hace de su conocimiento que la información de nuestros clientes es tratada de forma estrictamente confidencial por lo que al proporcionar sus datos personales, tales como:"),
             Button(
-                label: "Aceptar",
-                colorBackground: 0xFF0095FF,
-                colorFont: Colors.white,
-                callback: action)
+              label: "Aceptar",
+              colorBackground: 0xFF0095FF,
+              colorFont: Colors.white,
+              action: 1,
+            )
           ],
         )));
