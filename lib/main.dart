@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-import 'package:denumex/screens/singup.dart';
+import 'package:denumex/screens/Singup.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -27,31 +27,29 @@ class HomePage extends StatelessWidget {
             children: <Widget>[
               Stack(
                 children: <Widget>[
-                  Container(
-                    child: Stack(
-                      children: <Widget>[
-                        Container(
-                          padding:
-                              const EdgeInsets.fromLTRB(15.0, 10.0, 0.0, 0.0),
-                          child: const Text('DENUMEX',
-                              style: TextStyle(
-                                  fontFamily: 'Montserrat',
-                                  fontSize: 60,
-                                  fontWeight: FontWeight.bold)),
-                        )
-                      ],
-                    ),
+                  Stack(
+                    children: <Widget>[
+                      Container(
+                        padding:
+                            const EdgeInsets.fromLTRB(15.0, 10.0, 0.0, 0.0),
+                        child: const Text('DENUMEX',
+                            style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontSize: 60,
+                                fontWeight: FontWeight.bold)),
+                      )
+                    ],
                   ),
                   Container(
                     padding: const EdgeInsets.fromLTRB(15.0, 75.0, 0.0, 0.0),
                     child: const Text(
-                      'Denucia',
+                      'AntiCorrup',
                       style:
                           TextStyle(fontSize: 45, fontWeight: FontWeight.bold),
                     ),
                   ),
                   Container(
-                    padding: const EdgeInsets.fromLTRB(200.0, 45.0, 0.0, 0.0),
+                    padding: const EdgeInsets.fromLTRB(250.0, 60.0, 0.0, 0.0),
                     child: const Text(
                       '.',
                       style: TextStyle(
@@ -69,7 +67,7 @@ class HomePage extends StatelessWidget {
                 height: MediaQuery.of(context).size.height / 3,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("assets/img/logo.jpeg"))),
+                        image: AssetImage("assets/img/logo.png"))),
               ),
               Column(
                 children: <Widget>[

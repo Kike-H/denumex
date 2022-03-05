@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class InputFile extends StatelessWidget {
+class Input extends StatelessWidget {
   final String label;
   final bool obscureText;
   TextEditingController controller = TextEditingController();
 
-  InputFile({required this.label, this.obscureText = false, Key? key})
+  Input({required this.label, this.obscureText = false, Key? key})
       : super(key: key);
 
   String getValue() {
