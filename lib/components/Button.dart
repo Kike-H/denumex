@@ -23,9 +23,12 @@ class Button extends StatelessWidget {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => Report()));
         } else if (action == 2) {
-          const AlertDialog(
-            title: Text("Corrupción reportarda"),
-          );
+          showDialog(
+              context: context,
+              builder: (BuildContext context) => AlertDialog(
+                    title: const Text('Corrupción reportada'),
+                    content: const Text('La corrupción fue reportada'),
+                  ));
         }
       },
       minWidth: double.infinity,
