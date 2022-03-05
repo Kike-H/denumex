@@ -1,6 +1,6 @@
 # denumex
 
-A new Flutter project.
+This is an application to make complaints in cases of corruption.
 
 ## Getting Started
 
